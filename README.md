@@ -1,1 +1,1 @@
-# poli-functions-repo-serverless
+# poli-functions-repo

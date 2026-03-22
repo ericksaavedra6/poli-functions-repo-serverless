@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F1 Drivers Explorer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>F1 Drivers Explorer</h1>
+      <p>
+        Aplicación serverless con Firebase Hosting, Cloud Functions y Firestore
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Consultas</h2>
+
+      <div class="grid-form">
+        <div class="field">
+          <label for="driverIdInput">Buscar por ID</label>
+          <input
+            id="driverIdInput"
+            type="text"
+            placeholder="Ej: michael-schumacher"
+          />
+        </div>
+        <div class="actions-inline">
+          <button id="searchIdBtn">Buscar ID</button>
+        </div>
+
+        <div class="field">
+          <label for="driverNameInput">Buscar por nombre</label>
+          <input
+            id="driverNameInput"
+            type="text"
+            placeholder="Ej: Lewis"
+          />
+        </div>
+        <div class="actions-inline">
+          <button id="searchNameBtn">Buscar nombre</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="loadDriversBtn">Listar pilotos</button>
+        <button id="loadChampionsBtn">Ver campeones</button>
+        <button id="clearBtn" class="secondary">Limpiar</button>
+      </div>
+
+      <div class="status-bar">
+        <span id="status">Listo para consultar</span>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <div class="metric-card">
+        <span class="metric-title">Resultados</span>
+        <strong id="metricResults">0</strong>
+      </div>
+      <div class="metric-card">
+        <span class="metric-title">Dataset</span>
+        <strong>Pilotos F1</strong>
+      </div>
+      <div class="metric-card">
+        <span class="metric-title">Arquitectura</span>
+        <strong>Hosting + Functions + Firestore</strong>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Resultados</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Piloto</th>
+              <th>Nacionalidad</th>
+              <th>Década</th>
+              <th>Campeonatos</th>
+              <th>Victorias</th>
+              <th>Podios</th>
+              <th>Puntos</th>
+              <th>Activo</th>
+              <th>Campeón</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody">
+            <tr>
+              <td colspan="10" class="empty-row">
+                Aún no hay resultados cargados
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
